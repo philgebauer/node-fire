@@ -1,5 +1,5 @@
-# nodeFire with SQL Authorization
-AngularFire with token authentication on Node backend server. This branch uses the pg node module with a postgres database to show an authorization example.
+# nodeFire with Mongo Authorization
+AngularFire with token authentication on Node backend server. This branch uses the mongoose node module with a mongo database to show an authorization example.
 
 ## Get Started with nodeFire
 1. Run these commands to add the project locally:
@@ -53,8 +53,8 @@ AngularFire with token authentication on Node backend server. This branch uses t
   5. Toggle Google to `on`
 
 7. Connect the application to your database
-  1. Create a new postico database or select one you already use. In `app.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
-  2. Copy the queries from the `database.sql` file and run them in postico to create the necessary tables for this project.
+  1. Create a new mongo database or select one you already use. In `app.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
+  2. Copy the queries from the `database.js` file and run them in robomongo or the mongo terminal to create the necessary collections for this project.
 
 8. Run `npm start` to run your application on `localhost:5000`
 
