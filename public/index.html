@@ -22,7 +22,8 @@
     <h1>Hi! Log in to get some secret data from the server!</h1>
     <button ng-click="sc.logIn()">Log In</button>
     <button ng-click="sc.logOut()">Log Out</button>
-    <table>
+    <div ng-if="sc.secretData.length === 0">Log in to get some secret data.</div>
+    <table ng-if="sc.secretData.length > 0">
       <thead>
         <tr>
           <th>
