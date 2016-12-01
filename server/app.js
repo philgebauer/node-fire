@@ -45,18 +45,24 @@ app.get("/privateData", function(req, res){
           res.sendStatus(500);
         }else{
           pg.connect(connectionString, function(err, client, done){
-            var clearanceLevel = clearanceLevelQueryResult.rows[0].clearance_level;
-            // Based on the clearance level of the individual, give them access to different information
-            client.query('SELECT * FROM secret_information WHERE secrecy_level<=$1', [clearanceLevel], function(err, results){
-              done();
-              if(err){
-                console.log('Error COMPLETING secret_information query task', error);
-                res.sendStatus(500);
-              }else{
-                // return all of the results where a specific user has permission
-                res.send(results.rows);
-              }
-            });
+            if(clearanceLevelQueryResult.rowCount === 0) {
+              // If the user is not in the database, return a forbidden error status
+              console.log('No user found with that email. Have you added this person to the database? Email: ', decodedToken.email);
+              res.sendStatus(403);
+            } else {
+              var clearanceLevel = clearanceLevelQueryResult.rows[0].clearance_level;
+              // Based on the clearance level of the individual, give them access to different information
+              client.query('SELECT * FROM secret_information WHERE secrecy_level<=$1', [clearanceLevel], function(err, results){
+                done();
+                if(err){
+                  console.log('Error COMPLETING secret_information query task', error);
+                  res.sendStatus(500);
+                }else{
+                  // return all of the results where a specific user has permission
+                  res.send(results.rows);
+                }
+              });
+            }
           });
         }
       });
