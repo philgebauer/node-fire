@@ -54,7 +54,19 @@ AngularFire with token authentication on Node backend server. This branch uses t
 
 7. Connect the application to your database
   1. Create a new mongo database or select one you already use. In `app.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
-  2. Copy the queries from the `database.js` file and run them in robomongo or the mongo terminal to create the necessary collections for this project.
+  2. Copy the queries from the `database.js` file and run them in robomongo or the mongo terminal to create the necessary collections for this project. On the `db.users.insert`, be sure to add your own name and give yourself a clearance_level from 1 to 5. This will determine what data you can see:
+
+    ```javascript
+    db.users.insert(
+       [
+        { email: 'lukeschlangen@gmail.com', clearanceLevel: 5 },
+        { email: 'youremail@gmail.com', clearanceLevel: 4 }, // Your Google Email added here
+        { email: 'yourotheremail@gmail.com', clearanceLevel: 2 }, // Your Other Google Email added here
+        { email: 'luke@primeacademy.io', clearanceLevel: 3 }
+       ]
+    );
+    ```
+  Because you have set up google OAuth, you will need to log in with a google account (an email with `@gmail.com` will work great). If you have a second google account, that will make it easy to see the differences for people with differing clearance levels.
 
 8. Run `npm start` to run your application on `localhost:5000`
 
