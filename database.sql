@@ -6,6 +6,8 @@ CREATE TABLE users (
 
 INSERT INTO users (email, clearance_level)
 VALUES ('lukeschlangen@gmail.com', 5),
+('youremail@example.com', 4), --Your Google Email added here
+('youremail@example.com', 2), --Your Other Google Email added here
 ('luke@primeacademy.io', 3);
 
 CREATE TABLE secret_information (
