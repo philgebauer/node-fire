@@ -53,7 +53,7 @@ AngularFire with token authentication on Node backend server. This branch uses t
   5. Toggle Google to `on`
 
 7. Connect the application to your database
-  1. Create a new mongo database or select one you already use. In `app.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
+  1. Create a new mongo database or select one you already use. In `server/modules/database-config.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
   2. Copy the queries from the `database.js` file and run them in robomongo or the mongo terminal to create the necessary collections for this project. On the `db.users.insert`, be sure to add your own name and give yourself a clearance_level from 1 to 5. This will determine what data you can see:
 
     ```javascript

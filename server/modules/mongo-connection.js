@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var connectionString = 'mongodb://localhost:27017/sigma';
+var connectionString = require('./database-config');
 
 var connectToMongoDatabase = function() {
   mongoose.connect(connectionString);
