@@ -53,7 +53,7 @@ AngularFire with token authentication on Node backend server. This branch uses t
   5. Toggle Google to `on`
 
 7. Connect the application to your database
-  1. Create a new postico database or select one you already use. In `app.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
+  1. Create a new postico database or select one you already use. In `server/modules/database-config.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
   2. Copy the queries from the `database.sql` file and run them in postico to create the necessary tables for this project. On the insert query, be sure to add your own name and give yourself a clearance_level from 1 to 5. This will determine what data you can see:
 
     ```sql
