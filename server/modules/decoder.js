@@ -2,7 +2,7 @@ var admin = require("firebase-admin");
 
 admin.initializeApp({
   credential: admin.credential.cert("./server/firebase-service-account.json"),
-  databaseURL: "https://sigma-test-run.firebaseio.com" // replace this line with your URL
+  databaseURL: "https://node-prime.firebaseio.com" // replace this line with your URL
 });
 
 /* This is where the magic happens. We pull the id_token off of the request,

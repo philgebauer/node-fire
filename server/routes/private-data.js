@@ -32,4 +32,19 @@ router.get("/", function(req, res){
   });
 });
 
+router.post("/", function(req, res) {
+  var newUser = new User(req.body);
+
+
+  newUser.save(function(err) {
+    if(err) {
+      console.log('ERR: ', err);
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(201);
+    }
+    });
+  }); 
+
+
 module.exports = router;

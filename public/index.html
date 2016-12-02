@@ -17,6 +17,8 @@
 
     <!-- Angular Application with Authentication -->
     <script src="client.js"></script>
+
+</script>
   </head>
   <body ng-controller="SampleCtrl as sc">
     <h1>Hi! Log in to get some secret data from the server!</h1>
@@ -45,5 +47,11 @@
         </tr>
       </tbody>
     </table>
-  </body>
+    <form ng-if="sc.secretData.length > 3">
+    <input type="text" ng-model="sc.newUser.email" id="email" placeholder="email" />
+    <input type="text" ng-model="sc.newUser.clearanceLevel" id="email" placeholder="clearance level" />
+    </select>
+    <button ng-click="sc.addUser()">Add New User</button>
+  </form>
+    </body>
 </html>

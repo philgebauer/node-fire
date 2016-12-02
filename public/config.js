@@ -1,41 +1,8 @@
-/*
-
-########  ######## ########  ##          ###     ######  ########
-##     ## ##       ##     ## ##         ## ##   ##    ## ##
-##     ## ##       ##     ## ##        ##   ##  ##       ##
-########  ######   ########  ##       ##     ## ##       ######
-##   ##   ##       ##        ##       ######### ##       ##
-##    ##  ##       ##        ##       ##     ## ##    ## ##
-##     ## ######## ##        ######## ##     ##  ######  ########
-
-######## ##     ## ####  ######
-   ##    ##     ##  ##  ##    ##
-   ##    ##     ##  ##  ##
-   ##    #########  ##   ######
-   ##    ##     ##  ##        ##
-   ##    ##     ##  ##  ##    ##
-   ##    ##     ## ####  ######
-
-   ######## #### ##       ########
-   ##        ##  ##       ##
-   ##        ##  ##       ##
-   ######    ##  ##       ######
-   ##        ##  ##       ##
-   ##        ##  ##       ##
-   ##       #### ######## ########
-
-*/
-
-// You will need to update these with your own values
-// Do not copy the script tags into here, just the config part
-
-/////////////////////////////////////////////////////////
-// Initialize Firebase
 var config = {
-  apiKey: "AIzaSyAU9OZTcXLQpS0VheZz7Xy-UpqLGBKlXlY",
-  authDomain: "sigma-test-run.firebaseapp.com",
-  databaseURL: "https://sigma-test-run.firebaseio.com",
-  storageBucket: "sigma-test-run.appspot.com",
-  messagingSenderId: "279228406571"
+  apiKey: "AIzaSyCLbYfOYPLCI4f2NlgZ9MVFdFMOcmU-dJ4",
+  authDomain: "node-prime.firebaseapp.com",
+  databaseURL: "https://node-prime.firebaseio.com",
+  storageBucket: "node-prime.appspot.com",
+  messagingSenderId: "618303768614"
 };
 firebase.initializeApp(config);

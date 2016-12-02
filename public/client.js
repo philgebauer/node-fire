@@ -2,6 +2,8 @@ var app = angular.module("sampleApp", ["firebase"]);
 app.controller("SampleCtrl", function($firebaseAuth, $http) {
   var auth = $firebaseAuth();
   var self = this;
+  self.newUser = {};
+
 
   // This code runs whenever the user logs in
   self.logIn = function(){
@@ -37,6 +39,26 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
     }
 
   });
+
+  self.addUser = function() {
+  console.log('adding this person: ', self.newUser);
+
+  if(firebaseUser) {
+    firebaseUser.getToken().then(function(idToken) {
+      $http({
+        method: 'POST',
+        url: '/privateData',
+        headers: {
+          id_token: idToken
+        }
+      }).then(function(response) {
+        self.newUser = {};
+      });
+    });
+  } else {
+    console.log('Not able to add a new user.');
+  }
+};
 
   // This code runs when the user logs out
   self.logOut = function(){
